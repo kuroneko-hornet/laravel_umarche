@@ -84,7 +84,9 @@ class OwnersController extends Controller
 
         return redirect()
             ->route('admin.owners.index')
-            ->with('message','successful registering!');
+            ->with(['message' => 'successful registering!',
+                'status' => 'info']);
+
 
     }
 
@@ -132,7 +134,8 @@ class OwnersController extends Controller
 
         return redirect()
             ->route('admin.owners.index')
-            ->with('message', 'successful updating!');
+            ->with(['message' => 'successful updating!',
+                'status' => 'info']);
 
     }
 
@@ -145,5 +148,21 @@ class OwnersController extends Controller
     public function destroy($id)
     {
         //
+        Owner::findOrFail($id)->delete();
+        return redirect()
+        ->route('admin.owners.index')
+        ->with(['message' => 'successful delete!',
+            'status' => 'alert']);
+
+    }
+
+    public function expiredOwnerIndex(){
+        $expiredOwners = Owner::onlyTrashed()->get();
+        return view('admin.expired-owners', compact('expiredOwners'));
+    }
+
+    public function expiredOwnerDestroy($id){
+        Owner::onlyTrashed()->findOrFail($id)->forceDelete();
+        return redirect()->route('admin.expired-owners.index');
     }
 }
