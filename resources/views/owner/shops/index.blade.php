@@ -20,7 +20,7 @@
                                 <span class="border p-2 rounded-md bg-red-400 text-white">sale off</span>
                                 @endif
                                 <div class="text-xl">{{ $shop->name }}</div>
-                                <x-shop-thumbnail :filename="$shop->filename"/>
+                                <x-thumbnail :filename="$shop->filename" type="shops"/>
                                     {{ $shop->name }}
                             </div>
                         </a>
