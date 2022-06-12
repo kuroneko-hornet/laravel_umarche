@@ -666,6 +666,10 @@ select {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -719,6 +723,9 @@ select {
 }
 .mb-8 {
   margin-bottom: 2rem;
+}
+.mt-32 {
+  margin-top: 8rem;
 }
 .block {
   display: block;
@@ -783,6 +790,9 @@ select {
 .w-1\/2 {
   width: 50%;
 }
+.w-32 {
+  width: 8rem;
+}
 .w-12 {
   width: 3rem;
 }
@@ -803,9 +813,6 @@ select {
 }
 .w-1\/4 {
   width: 25%;
-}
-.w-32 {
-  width: 8rem;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -1657,12 +1664,12 @@ select {
     border-left-width: 1px;
   }
 
-  .md\:p-6 {
-    padding: 1.5rem;
-  }
-
   .md\:p-4 {
     padding: 1rem;
+  }
+
+  .md\:p-6 {
+    padding: 1.5rem;
   }
 
   .md\:px-5 {
